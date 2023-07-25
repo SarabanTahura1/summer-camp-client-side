@@ -48,7 +48,7 @@ const Class = ({ cls }) => {
             "https://media.istockphoto.com/id/1051721290/photo/learn-english-concept-education-and-career-opportunities.jpg?s=612x612&w=0&k=20&c=krW8rTMOF9ROQ66ufHVkefuMJ29ol1G21pGbTml6z24="
           }
           alt="course images"
-          className="rounded-xl"
+          className="rounded-xl h-40 w-full object-fill"
         />
       </figure>
       <div className="card-body items-center text-center">

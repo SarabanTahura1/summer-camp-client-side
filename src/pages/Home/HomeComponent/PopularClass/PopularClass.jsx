@@ -26,7 +26,7 @@ const PopularClass = () => {
         </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2  gap-10 lg:grid-cols-3 px-4 lg:px-0 py-10">
-        {popularClass?.map((cls) => (
+        {popularClass?.slice(0, 6).map((cls) => (
           <Class key={cls._id} cls={cls}></Class>
         ))}
       </div>

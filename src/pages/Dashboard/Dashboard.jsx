@@ -18,7 +18,7 @@ import { MdAlternateEmail } from "react-icons/md";
 import { AiOutlineHome } from "react-icons/ai";
 import { RiLogoutCircleLine } from "react-icons/ri";
 import useLoadSpecificUser from "../../CustomHook/useLoadSpecificUser";
-
+import Fade from "react-reveal/Fade";
 const drawerWidth = 280;
 
 function Dashboard(props) {
@@ -41,37 +41,43 @@ function Dashboard(props) {
           {/* for admin */}
           {role === "admin" && (
             <>
-              <li className="flex items-center gap-2">
-                <BiBookAdd />
-                <Link to="/dashboard/manage-class">Manage Class</Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <BiBookAdd />
-                <Link to="/dashboard/manage-user">Manage User</Link>
-              </li>
+              <Fade left cascade>
+                <li className="flex items-center gap-2">
+                  <BiBookAdd />
+                  <Link to="/dashboard/manage-class">Manage Class</Link>
+                </li>
+                <li className="flex items-center gap-2">
+                  <BiBookAdd />
+                  <Link to="/dashboard/manage-user">Manage User</Link>
+                </li>
+              </Fade>
             </>
           )}
 
           {/* for instructor */}
           {role === "instructor" && (
             <>
-              <li className="flex items-center gap-2">
-                <BiBookAdd />
-                <Link to="/dashboard/add-class">Add Class</Link>
-              </li>
-              <li className="flex items-center gap-2">
-                <SiGoogleclassroom />
-                <Link to="/dashboard/all-class">All Class</Link>
-              </li>
+              <Fade left cascade>
+                <li className="flex items-center gap-2">
+                  <BiBookAdd />
+                  <Link to="/dashboard/add-class">Add Class</Link>
+                </li>
+                <li className="flex items-center gap-2">
+                  <SiGoogleclassroom />
+                  <Link to="/dashboard/all-class">All Class</Link>
+                </li>
+              </Fade>
             </>
           )}
 
           {role === "student" && (
             <>
-              <li className="flex items-center gap-2">
-                <SiGoogleclassroom />
-                <Link to="/dashboard/booking-class">Booking Class</Link>
-              </li>
+              <Fade left cascade>
+                <li className="flex items-center gap-2">
+                  <SiGoogleclassroom />
+                  <Link to="/dashboard/booking-class">Booking Class</Link>
+                </li>
+              </Fade>
             </>
           )}
         </ul>
@@ -80,24 +86,26 @@ function Dashboard(props) {
 
       <div className="py-5 px-2">
         <ul className="space-y-2">
-          <li className="flex items-center gap-2">
-            <MdAlternateEmail />
-            <li className="text-md" to="/dashboard/dfg">
-              {user?.email}
+          <Fade left cascade>
+            <li className="flex items-center gap-2">
+              <MdAlternateEmail />
+              <li className="text-md" to="/dashboard/dfg">
+                {user?.email}
+              </li>
             </li>
-          </li>
 
-          <li className="flex items-center gap-2">
-            <AiOutlineHome />
-            <Link to="/">Home</Link>
-          </li>
-          <li
-            onClick={handleLogOut}
-            className="flex items-center gap-2 cursor-pointer"
-          >
-            <RiLogoutCircleLine />
-            <h5>Logout</h5>
-          </li>
+            <li className="flex items-center gap-2">
+              <AiOutlineHome />
+              <Link to="/">Home</Link>
+            </li>
+            <li
+              onClick={handleLogOut}
+              className="flex items-center gap-2 cursor-pointer"
+            >
+              <RiLogoutCircleLine />
+              <h5>Logout</h5>
+            </li>
+          </Fade>
         </ul>
       </div>
     </div>
